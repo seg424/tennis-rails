@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-  enum status: [:active, :inactive, :substitute]
+  enum status: %w(ACTIVE INACTIVE SUBSTITUTE)
 end

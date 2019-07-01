@@ -5,9 +5,11 @@ module Types
     class Status < BaseEnum
       description "Allowed values for a player's status"
 
-      value "Active", value: 0
-      value "Inactive", value: 1
-      value "Substitute", value: 2
+      STATUSES = %w(ACTIVE INACTIVE SUBSTITUTE)
+
+      STATUSES.each do |status|
+        value(status, value: status)
+      end
     end
   end
 end

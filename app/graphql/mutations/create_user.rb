@@ -15,13 +15,13 @@ module Mutations
 
     def resolve(first_name:, last_name:, email:, phone_number: nil, admin: nil, status: nil)
       user = User.create(
-        first_name: first_name, 
+        first_name: first_name,
         last_name: last_name,
-        email: email, 
-        phone_number: phone_number, 
-        admin: admin, 
+        email: email,
+        phone_number: phone_number,
+        admin: admin,
         status: status
-        )
+      )
 
       { user: user }
     end

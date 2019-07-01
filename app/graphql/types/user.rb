@@ -2,7 +2,7 @@
 
 module Types
   class User < GraphQL::Schema::Object
-    description "User"
+    description 'User'
 
     field :id, ID, null: false
     field :first_name, String, null: false
