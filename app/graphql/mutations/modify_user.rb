@@ -10,11 +10,14 @@ module Mutations
     field :user, Types::User, null: false
 
     def resolve(id:, values:)
-      user = User.find_by(id)
+      user = User.find(id)
 
-      user&.update(values.to_h)
+      # error handling
+      if user
+        user.update(values.to_h)
+      end
+
       { user: user }
-      # need some error handling
     end
   end
 end
