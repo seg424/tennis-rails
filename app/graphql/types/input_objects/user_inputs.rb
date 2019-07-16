@@ -13,6 +13,7 @@ module Types
       argument :admin, Boolean, required: false
       argument :scorekeeper, Boolean, required: false
       argument :tennis_balls, Boolean, required: false
+      argument :league, String, required: false
     end
   end
 end

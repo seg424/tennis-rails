@@ -14,7 +14,17 @@ module Mutations
 
       # error handling
       if user
-        user.update(values.to_h)
+        league = League.find_by(name: values[:league])
+
+        if league
+          new_values = values.to_h.merge(league_id: league.id)
+                              .reject{ |k| k == :league }
+                              binding.pry
+          user.update(new_values)
+        else
+          user.league.destroy
+          user.update(values.to_h)
+        end
       end
 
       { user: user }

@@ -13,5 +13,10 @@ module Types
     field :admin, Boolean, null: false
     field :scorekeeper, Boolean, null: false
     field :tennis_balls, Boolean, null: false
+    field :league, String, null: true
+
+    def league
+      object.league&.name
+    end
   end
 end
