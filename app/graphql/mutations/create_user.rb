@@ -20,7 +20,8 @@ module Mutations
         email: email,
         phone_number: phone_number,
         admin: admin,
-        status: status
+        status: status,
+        league_id: 4
       )
 
       { user: user }

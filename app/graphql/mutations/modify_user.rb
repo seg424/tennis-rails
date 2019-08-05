@@ -19,7 +19,6 @@ module Mutations
         if league
           new_values = values.to_h.merge(league_id: league.id)
                               .reject{ |k| k == :league }
-                              binding.pry
           user.update(new_values)
         else
           user.league.destroy

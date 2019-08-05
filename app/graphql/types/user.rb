@@ -16,7 +16,7 @@ module Types
     field :league, String, null: true
 
     def league
-      object.league&.name
+      object.league.name.empty? ? nil : object.league.name
     end
   end
 end
